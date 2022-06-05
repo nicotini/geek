@@ -77,3 +77,28 @@ for(let i=0; i<plusButton.length; i++) {
     })
 
 }());
+(function(){
+function trackScroll() {
+    let scroll = window.pageYOffset;
+    let coords = document.documentElement.clientHeight;
+    if (scroll > coords) {
+        goTopBtn.classList.add('show');
+      }
+      if (scroll < coords) {
+        goTopBtn.classList.remove('show');
+      }
+}
+function backToTop() {
+    if (window.pageYOffset > 0) {
+        window.scrollTo({ 
+            top: 0,
+            behavior: 'smooth'
+            });
+      
+    }
+  }
+  let goTopBtn = document.querySelector('#back2Top');
+
+  window.addEventListener('scroll', trackScroll);
+  goTopBtn.addEventListener('click', backToTop);
+}());

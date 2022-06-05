@@ -395,6 +395,7 @@ textarea {
   }
   html {
       box-sizing: border-box;
+      scroll-behavior: smooth;
   }
   *, *::after, *::before {
       box-sizing: inherit;
@@ -984,10 +985,11 @@ textarea {
         color: #fff;
         
         position: absolute;
-        right: 25%;
+        left: 50%;
         bottom: -4%;
         width: 190px;
         height: 60px;
+        margin-left: -95px;
     }
     
     .plan__message {
@@ -1362,6 +1364,30 @@ a.sign-up_btn {
     top: 0;
     left:0;
 }
+/* button to top*/
+.back-to-top {
+    width: 40px;
+    text-decoration: none;
+    line-height: 40px;
+    cursor: pointer;
+    position: fixed;
+    color: #000;
+    bottom: 50px;
+    right: 10px;
+    background-color: #DDD;
+    text-align: center;
+    font-size: 30px;
+    transition: .5s all;
+    display: none;
+}
+.back-to-top.show {
+    display: block;
+}
+.back-to-top:hover {
+    background-color: #DDF;
+    color: #000;
+}
+
 @media screen and (max-width: 1200px) {
     .intro__title {
         font-size: 80px;
@@ -1398,9 +1424,6 @@ a.sign-up_btn {
     .about__wrapper-content {
         column-gap: 30px;
         padding: 85px 20px 84px 70px;
-    }
-    .plan__item-btn {
-        right: 18%;
     }
     .reviews__item-wrapper {
         margin: 0 20px;
@@ -1513,9 +1536,13 @@ a.sign-up_btn {
     }
     .about__wrapper-content {
         grid-template-columns: repeat(1, 1fr);
+        padding: 0;
+        padding-bottom: 60px;
     } 
+    
     .about__info {
         margin: 0 auto 50px auto;
+        padding: 85px 20px 0 70px;
     }
     
       .about__column img {
@@ -1557,10 +1584,6 @@ a.sign-up_btn {
     .benefit__icon {
         margin-bottom: 12px;
     }
-    
-    .plan__item-btn {
-        right: 10%;
-    }
 }  
 @media screen and (max-width: 768px) {
     .intro {
@@ -1583,6 +1606,12 @@ a.sign-up_btn {
         left: 0;
         top: 0;
         margin-bottom: -20px;
+    }
+    .benefits__wrapper svg:first-child {
+        top: -1%;
+    }
+    .benefits__wrapper svg:last-child {
+        bottom: -1%;
     }
     .offer__content {
         grid-template-columns: repeat(1, 1fr);
@@ -1623,9 +1652,7 @@ a.sign-up_btn {
     .plan__item-img img {
         width: 100%;
     }
-    .plan__item-btn {
-    right: 35%;
-    }
+   
     .main-article-wrapper {
         flex-direction: column;
     }
@@ -1667,6 +1694,66 @@ a.sign-up_btn {
     }
     .footer__bottom-copyright {
         margin-bottom: 20px;
+    }
+    .shop-slider__item {
+        position: relative;
+        overflow: hidden;
+    }
+   
+    .shop-slider__image {
+        object-fit: cover;
+        height: 650px;
+    }
+    .slider__item-caption {
+        top: 55%;
+        width: 60%;
+    }
+    .shop-slider__dots {
+        left: 80%;
+    }
+}
+@media screen and (max-width: 576px) {
+    .header__user_mobile {
+        display: flex;
+        width: 30%;
+        justify-content: end;
+    }
+    .header__user-item-login {
+        display: none;
+    }
+    .header__user-item {
+        margin-right: 30px;
+    }
+    .header__logo-mobile {
+        display: flex;
+        justify-content: center;
+        width: 40%;
+    }
+    .header__logo-pic {
+        max-width: 80%;
+    }
+    .intro {
+        margin-top: 85px;
+    }
+    .examples {
+        margin-bottom: 70px;
+    }
+    .plan {
+        padding: 50px 0;
+    }
+    .shop-carousel-item {
+        flex: 0 0 100%;
+    }
+    .slider__item-caption {
+        top: 45%;
+    }
+    .slider__item-desc {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 15px;
+    }
+    .dot {
+        margin: 0 3px;
     }
 }
 
