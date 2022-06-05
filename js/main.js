@@ -102,3 +102,22 @@ function backToTop() {
   window.addEventListener('scroll', trackScroll);
   goTopBtn.addEventListener('click', backToTop);
 }());
+
+const mainSlider = new SliderCarousel({
+    main: '.reviews__carousel',
+    wrapper: '.reviews__carousel-wrapper',
+    slidesToShow: 3,
+    responsive:  [{
+        breakpoint: 1024,
+        slideToShow: 3
+    },
+    {
+        breakpoint: 768,
+        slideToShow:2
+    },
+    {breakpoint: 576,
+    slideToShow: 1}
+],
+
+});
+mainSlider.init();
