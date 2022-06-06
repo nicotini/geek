@@ -1,14 +1,15 @@
 class SliderCarousel {
     constructor({
         main,
-        next = false,
-        prev = false,
+        next,
+        prev,
         wrapper, 
         position = 0,
         slidesToShow = 3,
         center = false,
         responsive = [],
         auto = true,
+       
     }) {
         if(!main || !wrapper) {
             console.warn('Необходимо подключить 2 свойства: "main", "wrapper"');
@@ -26,6 +27,7 @@ class SliderCarousel {
         };
         this.responsive = responsive;
         this.auto = auto;
+        
     }
 
     init() {
@@ -37,6 +39,7 @@ class SliderCarousel {
             this.addArrow();
             this.controlSlider();
         }
+
         if(this.responsive){
             //console.log(1);
             this.responseInit();
@@ -55,11 +58,14 @@ class SliderCarousel {
         
     }
     addStyle() {
-            const style = document.createElement('style');
-            style.id = 'slider-carousel';
+        let style = document.querySelector('#slider_carousel');
+        if(!style) {
+            style = document.createElement('style');
+            style.id = 'slider_carousel';
+        }
         style.textContent = `
         .yoda-carousel {
-            /* position: relative; */
+            
             overflow: hidden;
         }
         .yoda-carousel__wrapper {
@@ -72,9 +78,9 @@ class SliderCarousel {
             flex-direction: column;
             flex: 0 0 ${this.options.widthSlide}%;
             transition: 0.5 all ease;
-        }
-        `;
-        document.head.appendChild(style);
+        }`;
+        document.head.append(style);
+    
     }
     controlSlider(){
         this.prev.addEventListener('click', this.prevSlider.bind(this));
@@ -91,7 +97,7 @@ class SliderCarousel {
     }
    nextSlider() {
        ++ this.options.position;
-       console.log(this.options.position);
+       /* console.log(this.options.position); */
        if(this.options.position > this.slides.length - this.slidesToShow) {
         this.options.position = 0;
        }
@@ -105,11 +111,16 @@ class SliderCarousel {
         this.prev.className = 'yoda-btn-left';
         this.next.className = 'yoda-btn-right';
 
-        this.main.appendChild(this.prev);
-        this.main.appendChild(this.next);
+        this.main.append(this.prev);
+        this.main.append(this.next);
         
-        const style = document.createElement('style');
-        style.textContent = `
+        let styleTag = document.querySelector('#slider_carousel');
+        if(!styleTag) {
+            styleTag = document.createElement('style');
+            styleTag.id = 'slider_carousel';
+        }
+        
+        styleTag.textContent = `
         .yoda-btn-left,
         .yoda-btn-right {
             position: absolute;
@@ -133,7 +144,9 @@ class SliderCarousel {
             -webkit-transform: rotate(-45deg);
         }
         `;
-        document.head.appendChild(style);
+        
+        document.style.append(styleTag);
+        console.log(style);
     }
     autoSlider() {
         let timer = setInterval(this.nextSlider.bind(this), 1500); 
