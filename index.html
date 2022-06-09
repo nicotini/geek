@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no,user-scalable=0"/>
     <title>Geek-Fuel</title>
+    <link rel="stylesheet" href="swiper@8.2.2/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -430,9 +431,9 @@
         <!--Section main article end -->
         <!--Section shop slider start -->
         <section class="shop-slider">
-            <div class="slider">
-                <div class="shop-slider__wrapper">
-                    <div class="shop-slider__item">
+            <div class="slider swiper">
+                <div class="shop-slider__wrapper swiper-wrapper">
+                    <div class="shop-slider__item swiper-slide">
                         <img src="img/slider-1.jpg" alt="Slider" class="shop-slider__image">
                             <div class="slider__item-caption">
                                 <span>good for</span>
@@ -445,7 +446,7 @@
                             </div>
                         
                     </div>
-                    <div class="shop-slider__item">
+                    <div class="shop-slider__item swiper-slide">
                         <img src="img/slider-1.jpg" alt="Slider" class="shop-slider__image">
                             <div class="slider__item-caption">
                                 <span>good for</span>
@@ -458,7 +459,7 @@
                             </div>
                         
                     </div>
-                    <div class="shop-slider__item">
+                    <div class="shop-slider__item swiper-slide">
                         <img src="img/slider-1.jpg" alt="Slider" class="shop-slider__image">
                             <div class="slider__item-caption">
                                 <span>good for</span>
@@ -468,16 +469,14 @@
                                     Aliquam sodales venenatis nunc, et lacinia nunc. 
                                 </p>
                                 <button class="slider__item-btn btn">shop all</button>
-                            </div>
+                             </div>
                     </div>
                 </div>
+               
+                <!-- The dots/circles -->
+            <div class="shop-slider__dots swiper-pagination"></div>
             </div>
-            <!-- The dots/circles -->
-            <div class="shop-slider__dots">
-                <span class="dot dot-slider active-dot" ></span>
-                <span class="dot dot-slider"></span>
-                <span class="dot dot-slider"></span>
-            </div>
+            
         </section>
         <!--Section shop slider end -->
         <!--Section shop start -->
@@ -527,9 +526,9 @@
         <!--Section reviews start -->
         <section class="reviews">
             <div class="reviews__wrapper">
-                <div class="reviews__carousel">
-                    <div class="reviews__carousel-wrapper">
-                        <div class="reviews__item">
+                <div class="reviews__carousel swiper">
+                    <div class="reviews__carousel-wrapper swiper-wrapper">
+                        <div class="reviews__item swiper-slide">
                             <div class="reviews__item-wrapper">
                                 <h3 class="review__title">WE LOVE A GOOD COMPLIMENT</h3>
                                 <div class="review__content">
@@ -543,7 +542,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="reviews__item">
+                        <div class="reviews__item swiper-slide">
                             <div class="reviews__item-wrapper">
                                 <h3 class="review__title">WE LOVE A GOOD COMPLIMENT</h3>
                                 <div class="review__content">
@@ -557,7 +556,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="reviews__item">
+                        <div class="reviews__item swiper-slide">
                             <div class="reviews__item-wrapper">
                                 <h3 class="review__title">WE LOVE A GOOD COMPLIMENT</h3>
                                 <div class="review__content">
@@ -570,28 +569,24 @@
                                     </blockquote>
                                 </div>
                             </div>
+                        </div>
+                        <div class="reviews__item swiper-slide">
+                            <div class="reviews__item-wrapper">
+                                <h3 class="review__title">WE LOVE A GOOD COMPLIMENT</h3>
+                                <div class="review__content">
+                                    <blockquote>
+                                        <p>
+                                            Nam accumsan est vel neque varius, a gravida diam dignissim. 
+                                            Maecenas eu dui porta, pellentesque nisi id, bibendum erat. 
+                                            Proin condimentum lacinia tellus.
+                                        </p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="reviews__item">
-                        <div class="reviews__item-wrapper">
-                            <h3 class="review__title">WE LOVE A GOOD COMPLIMENT</h3>
-                            <div class="review__content">
-                                <blockquote>
-                                    <p>
-                                        Nam accumsan est vel neque varius, a gravida diam dignissim. 
-                                        Maecenas eu dui porta, pellentesque nisi id, bibendum erat. 
-                                        Proin condimentum lacinia tellus.
-                                    </p>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="pagination swiper-pagination"></div>
                 </div>
-                 <!-- The dots/circles -->
-            <div class="review-slider__dots">
-                <span class="dot dot-review active-dot" ></span>
-                <span class="dot dot-review"></span>
-                <span class="dot dot-review"></span>
-            </div>
             </div>
         </section>
         <!--Section reviews end -->
@@ -691,8 +686,8 @@
     </footer>
     <a title="up" class="back-to-top" id="back2Top">&#9650;</a>
     <!--footer end -->
-    <script src="js/sliderCarousel.js"></script>
+    <!-- <script src="swiper@8.2.2/swiper-bundle.min.js.map"></script> -->
+    <script src="swiper@8.2.2/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
-    
 </body>
 </html>

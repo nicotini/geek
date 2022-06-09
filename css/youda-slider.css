@@ -1,0 +1,30 @@
+.yoda-carousel {       
+    overflow: hidden;
+}
+.yoda-carousel__wrapper {
+    display: flex;
+    transition: transform 0.5s;
+    will-change: transition;
+}
+.yoda-btn-left,
+.yoda-btn-right {
+            position: absolute;
+            top: 50%;
+            border: transparent;
+            padding: 20px;
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            background: transparent;
+        }
+.yoda-btn-left {
+            left: 0.5%;
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+ .yoda-btn-right {
+            right: 0.5%;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }

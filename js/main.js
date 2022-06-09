@@ -103,7 +103,7 @@ function backToTop() {
   goTopBtn.addEventListener('click', backToTop);
 }());
 
-const mainSlider = new SliderCarousel({
+/* const mainSlider = new SliderCarousel({
     main: '.reviews__carousel',
     wrapper: '.reviews__carousel-wrapper',
     slidesToShow: 3,
@@ -121,3 +121,51 @@ const mainSlider = new SliderCarousel({
 
 });
 mainSlider.init();
+const Slider = new SliderCarousel({
+    general: '.shop-slider',
+    main: '.slider',
+    wrapper: '.shop-slider__wrapper',
+    slidesToShow: 1,
+    dots: true,
+});
+Slider.init(); */
+const swiper = new Swiper('.slider', {
+    // Optional parameters
+    loop: true,
+   
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    
+  }, 
+  autoplay: {
+    delay: 4000,
+  },
+  
+  });
+  const carousel = new Swiper('.reviews__carousel', {
+    loop: true,
+    autoplay: {
+        delay: 2000,
+      },
+      pagination: {
+        el: '.pagination',
+        clickable: true,
+      }, 
+      breakpoints: {
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 0
+        },
+        
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 0
+        },
+        
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 0
+        }
+      },
+  });
